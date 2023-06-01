@@ -1,14 +1,15 @@
 function advertisement () {
-  window.alert("Go to awesomecomputers.com for great sales!");
+  window.alert("Do you need a new computer? Visit www.superextracomputersales.com to find the best deals!");
   document.querySelector("form").removeEventListener("submit", advertisement);
 }
-window.addEventListener ("load", function() {
+
+window.addEventListener("load", function() {
     let form = document.querySelector("form");
     let resetBtn = document.querySelector("button#reset");
     let story = document.querySelector("div#story")
-    form.addEventListener ("submit", function(event) {
-
-      event.preventDefault();
+    
+    form.addEventListener("submit", function(event) {
+      
       const person1Input = document.getElementById("person1Input").value;
       const person2Input = document.getElementById("person2Input").value;
       const animalInput= document.getElementById("animalInput").value;
@@ -27,13 +28,14 @@ window.addEventListener ("load", function() {
       document.querySelector("span#exclamation").innerText = exclamationInput;
   
       story.removeAttribute("class");
+      event.preventDefault();
     });
     form.addEventListener("submit", function() {
       reset.removeAttribute("class");
     });
     form.addEventListener("submit", advertisement);
       
-    });
+    
     resetBtn.addEventListener("click", function() {
       story.setAttribute("class", "hidden");
       document.getElementById("person1Input").value = null;
@@ -43,5 +45,5 @@ window.addEventListener ("load", function() {
       document.getElementById("verbInput").value = null;
       document.getElementById("nounInput").value = null;
     });
-   
+  });
   
