@@ -1,3 +1,7 @@
+function advertisement () {
+  window.alert("Go to awesomecomputers.com for great sales!");
+  document.querySelector("form").removeEventListener("submit", advertisement);
+}
 window.addEventListener ("load", function() {
     let form = document.querySelector("form");
     let resetBtn = document.querySelector("button#reset");
@@ -27,8 +31,8 @@ window.addEventListener ("load", function() {
     form.addEventListener("submit", function() {
       reset.removeAttribute("class");
     });
-    form.addEventListener("submit", function () {
-      window.alert("Go to awesomecomputers.com for great sales!");
+    form.addEventListener("submit", advertisement);
+      
     });
     resetBtn.addEventListener("click", function() {
       story.setAttribute("class", "hidden");
@@ -39,5 +43,5 @@ window.addEventListener ("load", function() {
       document.getElementById("verbInput").value = null;
       document.getElementById("nounInput").value = null;
     });
-   });
+   
   
